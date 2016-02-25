@@ -73,6 +73,8 @@
         <resteasy.version>3.0.11.Final</resteasy.version>
         <mongodb-driver-version>3.0.2</mongodb-driver-version>
 
+		<glassfish-json.version>1.0.2</glassfish-json.version>
+		
         <!-- JBoss dependency versions -->
 
         <version.jboss.spec.javaee.7.0>1.0.0.Final</version.jboss.spec.javaee.7.0>
@@ -594,6 +596,12 @@
                 <artifactId>javax.json-api</artifactId>
                 <version>${javax.json.version}</version>
             </dependency>
+			
+			<dependency>
+				<groupId>org.glassfish</groupId>
+				<artifactId>javax.json</artifactId>
+				<version>${glassfish-json.version}</version>
+			</dependency>
 
             <dependency>
                 <groupId>org.drools</groupId>
