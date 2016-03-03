@@ -70,6 +70,8 @@
         <plugins.maven.liquibase.version>3.4.2</plugins.maven.liquibase.version>
         <plugins.maven.shade.version>2.4.3</plugins.maven.shade.version>
 
+        <plugins.coveralls.version>4.1.0</plugins.coveralls.version>
+
         <plugins.buildnumber.version>1.4</plugins.buildnumber.version>
         <plugins.buildhelper.version>1.10</plugins.buildhelper.version>
 
@@ -125,7 +127,6 @@
         <!-- Default plugin versions and management -->
         <pluginManagement>
             <plugins>
-
 
                 <!-- WildFly plugin to deploy war -->
                 <plugin>
@@ -504,8 +505,14 @@
                     <artifactId>maven-shade-plugin</artifactId>
                     <version>${plugins.maven.shade.version}</version>
                 </plugin>
-            </plugins>
 
+                <plugin>
+                    <groupId>org.eluder.coveralls</groupId>
+                    <artifactId>coveralls-maven-plugin</artifactId>
+                    <version>${plugins.coveralls.version}</version>
+                </plugin>
+
+            </plugins>
         </pluginManagement>
 
         <!-- Plugin configuration -->
