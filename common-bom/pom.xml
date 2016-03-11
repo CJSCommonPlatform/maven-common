@@ -83,6 +83,8 @@
         <jsonpath.version>2.0.0</jsonpath.version>
 
         <metrics.version>3.1.2</metrics.version>
+        <raml-parser.version>0.8.12</raml-parser.version>
+        <reflections.version>0.9.9-RC1</reflections.version>
     </properties>
 
     <!-- ============ DEPENDENCIES ============ -->
@@ -614,6 +616,18 @@
                 <groupId>io.dropwizard.metrics</groupId>
                 <artifactId>metrics-servlets</artifactId>
                 <version>${metrics.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.raml</groupId>
+                <artifactId>raml-parser</artifactId>
+                <version>${raml-parser.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.reflections</groupId>
+                <artifactId>reflections</artifactId>
+                <version>${reflections.version}</version>
             </dependency>
         </dependencies>
 
