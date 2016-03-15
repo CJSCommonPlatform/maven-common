@@ -12,7 +12,7 @@ install:
   - $JAVA_HOME/jre/bin/keytool -import -v -noprompt -storepass changeit -storetype jks -trustcacerts -alias IndigoBlueRoot -file target/travis-settings/ROOT-CA.crt -keystore target/travis-settings/cacerts
 script: mvn -Djavax.net.ssl.trustStore=$PWD/target/travis-settings/cacerts -B -V --settings target/travis-settings/settings.xml verify
 after_success:
-  - '[[ $TRAVIS_BRANCH == "master" && $TRAVIS_PULL_REQUEST == "false" ]] && mvn -Djavax.net.ssl.trustStore=$PWD/target/travis-settings/cacerts -DdeployAtEnd=true -DskipTests=true -B -V --errors deploy --settings target/travis-settings/settings.xml'
+  - '[[ $TRAVIS_BRANCH == "master" && $TRAVIS_PULL_REQUEST == "false" ]] || [[ $TRAVIS_TAG == release-* ]] && mvn -Djavax.net.ssl.trustStore=$PWD/target/travis-settings/cacerts -DdeployAtEnd=true -DskipTests=true -B -V --errors deploy --settings target/travis-settings/settings.xml'
 env:
   global:
     - secure: Vt0jkkZl/ZqkuJEygCj/Gs4RsqKHc9n4mn/8oG+t4KoU1tuMxB0+m2ENGyvqQopq61UwTfgqjJ+7k70y9fuFvyNo7g/b6CplbegEe4+pSu1qiID5Xb+duoq9NWncUBtkKbJHpzK85xhi1SP53P7+n1shgscHqJWShmaDQ0yzLFbeNcmX/LfUXpINvbDea5Cf9i3F9hymuGtcK0qrM+vp22Tq6DHbw6gzrJIRSUGeUSfjCFOXbzODtLttlqIGzSEyY5bopaIMqzNv4BPCpBGajztej7TI/idXmjki35mHnInA/cWEvT7Y66EGTx7XGwozNiZ6R+oYfP9b4lC6pYtk/Td1AckGRRAWRXDB3xaCz9p+BgF6IxshnF6JC2XXYTs0gO+cFkVcwRxa2Mqy3npyYGrTyTJauJhm0w6fJxWswg4YnbMxUSb5/fVnTiHZjbg/fIYAzCwpF7QLC27O3fAwwXL3h1/JiFv/WWdo4BlEwhSUS/Mnz2SN1TqZf3Mfz8q5Xb0us4LbSY0Bthu6+MkUStIrlaH0w0fa1eV+t61p3cEJmX4Ia5In48pYirnHYHc8yte6tSokSeV0BS2glWiW/aAXiixsN28ZFB7DuqD1E0wbYwmz1F0ehMPqpX/+AvNJufXpUUGyUGjljABQqMhJwgMuPpgp5ovzh3XRa1n2IGo=
