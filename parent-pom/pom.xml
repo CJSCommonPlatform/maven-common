@@ -88,7 +88,7 @@
         <plugins.maven.wildfly.skip>true</plugins.maven.wildfly.skip>
 
         <plugins.jacoco.version>0.7.5.201505241946</plugins.jacoco.version>
-        <plugins.raml.utils.version>1.2.2</plugins.raml.utils.version>
+        <plugins.raml.version>1.0.0</plugins.raml.version>
 
     </properties>
 
@@ -512,6 +512,11 @@
                     <version>${plugins.coveralls.version}</version>
                 </plugin>
 
+                <plugin>
+                    <artifactId>raml-maven-plugin</artifactId>
+                    <groupId>uk.gov.justice.maven</groupId>
+                    <version>${plugins.raml.version}</version>
+                </plugin>
             </plugins>
         </pluginManagement>
 
@@ -1029,26 +1034,29 @@
             <build>
                 <plugins>
 
-                    <!-- raml-maven-plugin checks syntax of .raml files
-                        and fails build if invalid raml is provided
-                        NOTE: we are backing out due to resource loading issue with Windows
-
-                        -->
                     <plugin>
-                        <groupId>uk.gov.moj.cpp.raml.utils</groupId>
                         <artifactId>raml-maven-plugin</artifactId>
-                        <version>${plugins.raml.utils.version}</version>
-                        <configuration>
-                            <pathToRaml>src/raml</pathToRaml>
-                        </configuration>
+                        <groupId>uk.gov.justice.maven</groupId>
                         <executions>
                             <execution>
-                                <phase>compile</phase>
+                                <id>generate-command-api-jaxrs</id>
+                                <phase>generate-sources</phase>
                                 <goals>
-                                    <goal>check-syntax</goal>
+                                    <goal>generate</goal>
                                 </goals>
+                                <configuration>
+                                    <generatorName>uk.gov.justice.services.adapters.rest.generator.RestAdapterGenerator</generatorName>
+                                    <basePackageName>uk.gov.justice.example.adapters.rest</basePackageName>
+                                </configuration>
                             </execution>
                         </executions>
+                        <dependencies>
+                            <dependency>
+                                <groupId>uk.gov.justice.services</groupId>
+                                <artifactId>rest-adapter-generator</artifactId>
+                                <version>${project.version}</version>
+                            </dependency>
+                        </dependencies>
                     </plugin>
                     <plugin>
                         <artifactId>maven-jar-plugin</artifactId>
