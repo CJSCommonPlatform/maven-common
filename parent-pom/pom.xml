@@ -1021,11 +1021,13 @@
         </profile>
         <profile>
             <id>raml-jar</id>
+            <!-- 
             <activation>
                 <file>
                     <exists>src/raml</exists>
                 </file>
             </activation>
+             -->
             <build>
                 <plugins>
 
