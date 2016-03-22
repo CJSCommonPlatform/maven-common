@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -13,16 +13,16 @@
     <name>Common BOM</name>
     <description>Common bill of materials defining standard versions for dependencies</description>
 
-    <!-- ===== NOTES ===== The dependencies defined here are NOT included in
-        a project - it just sets the version that will be included if required. You
-        still need to add the dependency in you project POM but do not define the
-        version, that it defined here so changing in one place changes in all projects
-        which ensures we dont end up using multiple versions of the same library, -->
+    <!-- ===== NOTES ===== The dependencies defined here are NOT included 
+        in a project - it just sets the version that will be included if required. 
+        You still need to add the dependency in you project POM but do not define 
+        the version, that it defined here so changing in one place changes in all 
+        projects which ensures we dont end up using multiple versions of the same 
+        library, -->
 
     <!-- ========== PROPERTIES ========== -->
 
     <properties>
-        <weld-ee-version>1.0.0.CR8</weld-ee-version>
         <weld-core-version>1.1.8.Final</weld-core-version>
 
         <activemq.version>5.11.1</activemq.version>
@@ -73,11 +73,14 @@
         <resteasy.version>3.0.11.Final</resteasy.version>
         <mongodb-driver-version>3.0.2</mongodb-driver-version>
 
-		<glassfish-json.version>1.0.2</glassfish-json.version>
+        <glassfish-json.version>1.0.2</glassfish-json.version>
 
         <!-- JBoss dependency versions -->
 
         <version.jboss.spec.javaee.7.0>1.0.0.Final</version.jboss.spec.javaee.7.0>
+        <version.wildfly.arquillian.container>1.0.2.Final</version.wildfly.arquillian.container>
+        <version.org.jboss.arquillian>1.1.11.Final</version.org.jboss.arquillian>
+        <version.org.wildfly>10.0.0.Final</version.org.wildfly>
 
         <drools.version>6.2.0.Final</drools.version>
         <jsonpath.version>2.0.0</jsonpath.version>
@@ -93,8 +96,8 @@
     <dependencyManagement>
         <dependencies>
 
-            <!-- NB: The Spring Boot version cannot be set as a property, because
-                this is an import dependency -->
+            <!-- NB: The Spring Boot version cannot be set as a property, 
+                because this is an import dependency -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -104,12 +107,13 @@
             </dependency>
 
             <!-- Define the version of JBoss' Java EE 7 APIs we want to use -->
-            <!-- JBoss distributes a complete set of Java EE 7 APIs including a Bill
-                of Materials (BOM). A BOM specifies the versions of a "stack" (or a collection)
-                of artifacts. We use this here so that we always get the correct versions
-                of artifacts. Here we use the jboss-javaee-7.0 stack (you can read this as
-                the JBoss stack of the Java EE 7 APIs). You can actually use this stack with
-                any version of WildFly that implements Java EE 7, not just WildFly 8! -->
+            <!-- JBoss distributes a complete set of Java EE 7 APIs including 
+                a Bill of Materials (BOM). A BOM specifies the versions of a "stack" (or 
+                a collection) of artifacts. We use this here so that we always get the correct 
+                versions of artifacts. Here we use the jboss-javaee-7.0 stack (you can read 
+                this as the JBoss stack of the Java EE 7 APIs). You can actually use this 
+                stack with any version of WildFly that implements Java EE 7, not just WildFly 
+                8! -->
             <dependency>
                 <groupId>org.jboss.spec</groupId>
                 <artifactId>jboss-javaee-7.0</artifactId>
@@ -119,10 +123,39 @@
             </dependency>
 
             <dependency>
+                <groupId>org.wildfly</groupId>
+                <artifactId>wildfly-dist</artifactId>
+                <version>${version.org.wildfly}</version>
+                <type>zip</type>
+            </dependency>
+
+            <dependency>
                 <groupId>org.jboss.arquillian.container</groupId>
                 <artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
-                <version>${weld-ee-version}</version>
+                <version>${version.org.jboss.arquillian}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.jboss.arquillian</groupId>
+                <artifactId>arquillian-bom</artifactId>
+                <version>${version.org.jboss.arquillian}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.wildfly.bom</groupId>
+                <artifactId>wildfly-javaee7</artifactId>
+                <version>${version.org.wildfly}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+        <dependency>
+            <groupId>org.wildfly.arquillian</groupId>
+            <artifactId>wildfly-arquillian-container-managed</artifactId>
+            <version>${version.wildfly.arquillian.container}</version>
+            <scope>test</scope>
+        </dependency>
 
             <dependency>
                 <groupId>org.mongodb</groupId>
@@ -229,8 +262,8 @@
                 <version>${camel.version}</version>
             </dependency>
 
-            <!-- xbean is required for ActiveMQ broker configuration in the spring
-                xml file -->
+            <!-- xbean is required for ActiveMQ broker configuration in the 
+                spring xml file -->
             <dependency>
                 <groupId>org.apache.xbean</groupId>
                 <artifactId>xbean-spring</artifactId>
@@ -579,7 +612,7 @@
             <dependency>
                 <groupId>org.jboss.logging</groupId>
                 <artifactId>jboss-logging</artifactId>
-                <version>3.1.0.GA</version>
+                <version>3.2.1.Final</version>
             </dependency>
 
             <dependency>
@@ -600,11 +633,11 @@
                 <version>${javax.json.version}</version>
             </dependency>
 
-			<dependency>
-				<groupId>org.glassfish</groupId>
-				<artifactId>javax.json</artifactId>
-				<version>${glassfish-json.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>org.glassfish</groupId>
+                <artifactId>javax.json</artifactId>
+                <version>${glassfish-json.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.drools</groupId>
