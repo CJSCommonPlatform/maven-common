@@ -584,6 +584,13 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${plugins.jacoco.version}</version>
+                <configuration>
+                    <excludes>
+                        <exclude>uk/gov/justice/api/*Application.class</exclude>
+                        <exclude>uk/gov/justice/api/*JmsListener.class</exclude>
+                        <exclude>uk/gov/justice/api/resource/*Resource.class</exclude>
+                    </excludes>
+                </configuration>
                 <executions>
                     <execution>
                         <id>default-prepare-agent</id>
