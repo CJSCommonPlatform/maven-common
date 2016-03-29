@@ -150,12 +150,12 @@
                 <scope>import</scope>
             </dependency>
 
-        <dependency>
-            <groupId>org.wildfly.arquillian</groupId>
-            <artifactId>wildfly-arquillian-container-managed</artifactId>
-            <version>${version.wildfly.arquillian.container}</version>
-            <scope>test</scope>
-        </dependency>
+            <dependency>
+                <groupId>org.wildfly.arquillian</groupId>
+                <artifactId>wildfly-arquillian-container-managed</artifactId>
+                <version>${version.wildfly.arquillian.container}</version>
+                <scope>test</scope>
+            </dependency>
 
             <dependency>
                 <groupId>org.mongodb</groupId>
@@ -550,6 +550,13 @@
                 <artifactId>guava-testlib</artifactId>
                 <version>${guava.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${h2.version}</version>
+            </dependency>
+
 
             <!-- Hibernate - http://www.hibernate.org/ -->
             <dependency>

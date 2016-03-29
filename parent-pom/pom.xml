@@ -487,10 +487,10 @@
                     <version>${plugins.buildhelper.version}</version>
                     <executions>
                         <execution>
-                        <id>maven-version</id>
-                        <goals>
-                            <goal>maven-version</goal>
-                        </goals>
+                            <id>maven-version</id>
+                            <goals>
+                                <goal>maven-version</goal>
+                            </goals>
                         </execution>
                     </executions>
                 </plugin>
@@ -511,8 +511,21 @@
                     <artifactId>coveralls-maven-plugin</artifactId>
                     <version>${plugins.coveralls.version}</version>
                 </plugin>
+                <plugin>
+                    <groupId>com.edugility</groupId>
+                    <artifactId>h2-maven-plugin</artifactId>
+                    <version>1.0</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.h2database</groupId>
+                            <artifactId>h2</artifactId>
+                            <version>${h2.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
 
             </plugins>
+
         </pluginManagement>
 
         <!-- Plugin configuration -->
@@ -1029,11 +1042,11 @@
         <profile>
             <id>raml-jar</id>
             <activation>
-            <!-- 
-                <file>
-                    <exists>src/raml</exists>
-                </file>
-                 -->
+                <!--
+                    <file>
+                        <exists>src/raml</exists>
+                    </file>
+                     -->
             </activation>
             <build>
                 <plugins>
