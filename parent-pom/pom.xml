@@ -1042,36 +1042,12 @@
         <profile>
             <id>raml-jar</id>
             <activation>
-                <!--
                     <file>
                         <exists>src/raml</exists>
                     </file>
-                     -->
             </activation>
             <build>
                 <plugins>
-
-                    <!-- raml-maven-plugin checks syntax of .raml files
-                        and fails build if invalid raml is provided
-                        NOTE: we are backing out due to resource loading issue with Windows
-
-                        -->
-                    <plugin>
-                        <groupId>uk.gov.moj.cpp.raml.utils</groupId>
-                        <artifactId>raml-maven-plugin</artifactId>
-                        <version>${plugins.raml.utils.version}</version>
-                        <configuration>
-                            <pathToRaml>src/raml</pathToRaml>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <phase>compile</phase>
-                                <goals>
-                                    <goal>check-syntax</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
                     <plugin>
                         <artifactId>maven-jar-plugin</artifactId>
                         <executions>
