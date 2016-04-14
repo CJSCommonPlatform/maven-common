@@ -90,6 +90,7 @@
         <raml-parser.version>0.8.12</raml-parser.version>
         <reflections.version>0.9.9-RC1</reflections.version>
         <openejb.version>7.0.0-M3</openejb.version>
+        <string.template.version>4.0.8</string.template.version>
     </properties>
 
     <!-- ============ DEPENDENCIES ============ -->
@@ -687,6 +688,12 @@
                 <groupId>org.reflections</groupId>
                 <artifactId>reflections</artifactId>
                 <version>${reflections.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.antlr</groupId>
+                <artifactId>ST4</artifactId>
+                <version>${string.template.version}</version>
             </dependency>
         </dependencies>
 
