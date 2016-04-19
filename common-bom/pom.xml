@@ -13,11 +13,11 @@
     <name>Common BOM</name>
     <description>Common bill of materials defining standard versions for dependencies</description>
 
-    <!-- ===== NOTES ===== The dependencies defined here are NOT included 
-        in a project - it just sets the version that will be included if required. 
-        You still need to add the dependency in you project POM but do not define 
-        the version, that it defined here so changing in one place changes in all 
-        projects which ensures we dont end up using multiple versions of the same 
+    <!-- ===== NOTES ===== The dependencies defined here are NOT included
+        in a project - it just sets the version that will be included if required.
+        You still need to add the dependency in you project POM but do not define
+        the version, that it defined here so changing in one place changes in all
+        projects which ensures we dont end up using multiple versions of the same
         library, -->
 
     <!-- ========== PROPERTIES ========== -->
@@ -99,7 +99,7 @@
     <dependencyManagement>
         <dependencies>
 
-            <!-- NB: The Spring Boot version cannot be set as a property, 
+            <!-- NB: The Spring Boot version cannot be set as a property,
                 because this is an import dependency -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -110,12 +110,12 @@
             </dependency>
 
             <!-- Define the version of JBoss' Java EE 7 APIs we want to use -->
-            <!-- JBoss distributes a complete set of Java EE 7 APIs including 
-                a Bill of Materials (BOM). A BOM specifies the versions of a "stack" (or 
-                a collection) of artifacts. We use this here so that we always get the correct 
-                versions of artifacts. Here we use the jboss-javaee-7.0 stack (you can read 
-                this as the JBoss stack of the Java EE 7 APIs). You can actually use this 
-                stack with any version of WildFly that implements Java EE 7, not just WildFly 
+            <!-- JBoss distributes a complete set of Java EE 7 APIs including
+                a Bill of Materials (BOM). A BOM specifies the versions of a "stack" (or
+                a collection) of artifacts. We use this here so that we always get the correct
+                versions of artifacts. Here we use the jboss-javaee-7.0 stack (you can read
+                this as the JBoss stack of the Java EE 7 APIs). You can actually use this
+                stack with any version of WildFly that implements Java EE 7, not just WildFly
                 8! -->
             <dependency>
                 <groupId>org.jboss.spec</groupId>
@@ -265,7 +265,7 @@
                 <version>${camel.version}</version>
             </dependency>
 
-            <!-- xbean is required for ActiveMQ broker configuration in the 
+            <!-- xbean is required for ActiveMQ broker configuration in the
                 spring xml file -->
             <dependency>
                 <groupId>org.apache.xbean</groupId>
@@ -510,6 +510,12 @@
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-core</artifactId>
                 <version>1.10.19</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.tomakehurst</groupId>
+                <artifactId>wiremock</artifactId>
+                <version>1.57</version>
             </dependency>
 
             <dependency>
