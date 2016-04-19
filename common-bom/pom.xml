@@ -582,7 +582,11 @@
                 <artifactId>openejb-core</artifactId>
                 <version>${openejb.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>org.apache.tomee</groupId>
+                <artifactId>openejb-server</artifactId>
+                <version>${openejb.version}</version>
+            </dependency>
 
             <!-- Hibernate - http://www.hibernate.org/ -->
             <dependency>
