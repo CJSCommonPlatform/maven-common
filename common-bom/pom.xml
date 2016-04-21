@@ -91,6 +91,7 @@
         <reflections.version>0.9.9-RC1</reflections.version>
         <openejb.version>7.0.0-M3</openejb.version>
         <string.template.version>4.0.8</string.template.version>
+        <javapoet.version>1.6.1</javapoet.version>
     </properties>
 
     <!-- ============ DEPENDENCIES ============ -->
@@ -704,6 +705,12 @@
                 <groupId>org.antlr</groupId>
                 <artifactId>ST4</artifactId>
                 <version>${string.template.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.squareup</groupId>
+                <artifactId>javapoet</artifactId>
+                <version>${javapoet.version}</version>
             </dependency>
         </dependencies>
 
