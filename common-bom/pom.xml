@@ -92,6 +92,7 @@
         <openejb.version>7.0.0-M3</openejb.version>
         <string.template.version>4.0.8</string.template.version>
         <javapoet.version>1.6.1</javapoet.version>
+        <reflections.version>0.9.10</reflections.version>
     </properties>
 
     <!-- ============ DEPENDENCIES ============ -->
@@ -711,6 +712,12 @@
                 <groupId>com.squareup</groupId>
                 <artifactId>javapoet</artifactId>
                 <version>${javapoet.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.reflections</groupId>
+                <artifactId>reflections</artifactId>
+                <version>${reflections.version}</version>
             </dependency>
         </dependencies>
 
