@@ -88,7 +88,6 @@
 
         <metrics.version>3.1.2</metrics.version>
         <raml-parser.version>0.8.12</raml-parser.version>
-        <reflections.version>0.9.9-RC1</reflections.version>
         <openejb.version>7.0.0-M3</openejb.version>
         <string.template.version>4.0.8</string.template.version>
         <javapoet.version>1.6.1</javapoet.version>
@@ -712,12 +711,6 @@
                 <groupId>com.squareup</groupId>
                 <artifactId>javapoet</artifactId>
                 <version>${javapoet.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.reflections</groupId>
-                <artifactId>reflections</artifactId>
-                <version>${reflections.version}</version>
             </dependency>
         </dependencies>
 
