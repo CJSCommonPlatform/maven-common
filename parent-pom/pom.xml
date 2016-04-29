@@ -89,6 +89,9 @@
 
         <plugins.jacoco.version>0.7.5.201505241946</plugins.jacoco.version>
         <plugins.raml.utils.version>1.2.2</plugins.raml.utils.version>
+        <!--TODO: change to the released version once it's released -->
+        <raml-maven-plugin.version>1.1.1-SNAPSHOT</raml-maven-plugin.version>
+        <serviceComponent>CHANGE_IT</serviceComponent>
 
     </properties>
 
@@ -526,6 +529,63 @@
                         </dependency>
                     </dependencies>
                 </plugin>
+                <plugin>
+                    <groupId>uk.gov.justice.maven</groupId>
+                    <artifactId>raml-maven-plugin</artifactId>
+                    <version>${raml-maven-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>rest-adapter-generator-parent-pom</id>
+                            <goals>
+                                <goal>generate</goal>
+                            </goals>
+                            <phase>generate-sources</phase>
+                            <configuration>
+                                <generatorName>uk.gov.justice.services.adapters.rest.generator.RestAdapterGenerator
+                                </generatorName>
+                                <sourceDirectory>${basedir}/src/raml</sourceDirectory>
+                                <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
+                                <basePackageName>uk.gov.moj.cpp.query.gen.adapter</basePackageName>
+                                <excludes>
+                                    <exclude>**/*.messaging.raml</exclude>
+                                </excludes>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>messaging-adapter-generator-parent-pom</id>
+                            <goals>
+                                <goal>generate</goal>
+                            </goals>
+                            <phase>generate-sources</phase>
+                            <configuration>
+                                <generatorName>uk.gov.justice.raml.jms.core.JmsEndpointGenerator</generatorName>
+                                <sourceDirectory>${basedir}/src/raml</sourceDirectory>
+                                <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
+                                <basePackageName>uk.gov.moj.cpp.query.gen.adapter</basePackageName>
+                                <includes>
+                                    <include>**/*.messaging.raml</include>
+                                </includes>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>rest-client-generator-parent-pom</id>
+                            <goals>
+                                <goal>generate</goal>
+                            </goals>
+                            <phase>generate-sources</phase>
+                            <configuration>
+                                <generatorName>uk.gov.justice.services.clients.rest.generator.RestClientGenerator
+                                </generatorName>
+                                <outputDirectory>${project.build.directory}/generated-sources</outputDirectory>
+                                <basePackageName>uk.gov.moj.cpp.query.gen.client</basePackageName>
+                                <generatorProperties>
+                                    <serviceComponent>${serviceComponent}</serviceComponent>
+                                </generatorProperties>
+                            </configuration>
+                        </execution>
+                    </executions>
+
+                </plugin>
 
             </plugins>
 
@@ -745,22 +805,6 @@
                 <artifactId>maven-jxr-plugin</artifactId>
                 <version>${plugins.maven.jxr.version}</version>
             </plugin>
-
-            <!-- Look for potential code problems using FindBugs - http://mojo.codehaus.org/findbugs-maven-plugin/ -->
-            <!--
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>${plugins.findbugs.version}</version>
-                <configuration>
-                    <xmlOutput>true</xmlOutput>
-            -->
-            <!-- Optional directory to put findbugs xdoc xml report -->
-            <!--
-                     <xmlOutputDirectory>target/site</xmlOutputDirectory>
-                </configuration>
-            </plugin>
-            -->
 
             <!-- Look for potential code problems using PMD - http://pmd.sourceforge.net/pmd-5.0.0/ -->
             <plugin>
@@ -1045,9 +1089,9 @@
         <profile>
             <id>raml-jar</id>
             <activation>
-                    <file>
-                        <exists>src/raml</exists>
-                    </file>
+                <file>
+                    <exists>src/raml</exists>
+                </file>
             </activation>
             <build>
                 <plugins>
