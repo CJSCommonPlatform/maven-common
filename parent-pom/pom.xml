@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -58,7 +59,8 @@
         <plugins.maven.assembly.version>2.6</plugins.maven.assembly.version>
         <plugins.maven.jxr.version>2.5</plugins.maven.jxr.version>
         <plugins.maven.pmd.version>3.6</plugins.maven.pmd.version>
-        <plugins.maven.project.info.reports.version>2.8.1</plugins.maven.project.info.reports.version>
+        <plugins.maven.project.info.reports.version>2.8.1
+        </plugins.maven.project.info.reports.version>
         <plugins.maven.resources.version>2.7</plugins.maven.resources.version>
         <plugins.maven.site.version>3.4</plugins.maven.site.version>
         <plugins.maven.source.version>2.4</plugins.maven.source.version>
@@ -80,8 +82,10 @@
         <plugins.maven.failsafe.version>2.19.1</plugins.maven.failsafe.version>
 
         <!-- Javadoc links to Java APIs -->
-        <javadoc.java.link>http://download.oracle.com/javase/${java.se.version}/docs/api/</javadoc.java.link>
-        <javadoc.javaee.link>http://download.oracle.com/javaee/${java.ee.version}/api/</javadoc.javaee.link>
+        <javadoc.java.link>http://download.oracle.com/javase/${java.se.version}/docs/api/
+        </javadoc.java.link>
+        <javadoc.javaee.link>http://download.oracle.com/javaee/${java.ee.version}/api/
+        </javadoc.javaee.link>
         <javadoc.javamail.link>http://javamail.kenai.com/nonav/javadocs/</javadoc.javamail.link>
 
         <plugins.maven.wildfly.version>1.0.2.Final</plugins.maven.wildfly.version>
@@ -214,8 +218,10 @@
                         <archive>
                             <manifest>
                                 <addClasspath>true</addClasspath>
-                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                                <addDefaultImplementationEntries>true
+                                </addDefaultImplementationEntries>
+                                <addDefaultSpecificationEntries>true
+                                </addDefaultSpecificationEntries>
                             </manifest>
                             <manifestEntries>
                                 <Build-Date>${ci.buildTimestamp}</Build-Date>
@@ -258,8 +264,10 @@
                         <archive>
                             <manifest>
                                 <addClasspath>true</addClasspath>
-                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                                <addDefaultImplementationEntries>true
+                                </addDefaultImplementationEntries>
+                                <addDefaultSpecificationEntries>true
+                                </addDefaultSpecificationEntries>
                             </manifest>
                             <manifestEntries>
                                 <Build-Date>${ci.buildTimestamp}</Build-Date>
@@ -307,8 +315,10 @@
                     <configuration>
                         <archive>
                             <manifest>
-                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                                <addDefaultImplementationEntries>true
+                                </addDefaultImplementationEntries>
+                                <addDefaultSpecificationEntries>true
+                                </addDefaultSpecificationEntries>
                             </manifest>
                             <manifestEntries>
                                 <Build-Date>${ci.buildTimestamp}</Build-Date>
@@ -367,7 +377,8 @@
                                 <goal>copy-resources</goal>
                             </goals>
                             <configuration>
-                                <outputDirectory>${basedir}/target/generated-test-resources/json</outputDirectory>
+                                <outputDirectory>${basedir}/target/generated-test-resources/json
+                                </outputDirectory>
                                 <resources>
                                     <resource>
                                         <directory>src/raml/json</directory>
@@ -419,8 +430,10 @@
                         <archive>
                             <manifest>
                                 <addClasspath>true</addClasspath>
-                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                                <addDefaultImplementationEntries>true
+                                </addDefaultImplementationEntries>
+                                <addDefaultSpecificationEntries>true
+                                </addDefaultSpecificationEntries>
                             </manifest>
                             <manifestEntries>
                                 <Build-Date>${ci.buildTimestamp}</Build-Date>
@@ -1045,9 +1058,9 @@
         <profile>
             <id>raml-jar</id>
             <activation>
-                    <file>
-                        <exists>src/raml</exists>
-                    </file>
+                <file>
+                    <exists>src/raml</exists>
+                </file>
             </activation>
             <build>
                 <plugins>
@@ -1105,7 +1118,8 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-shade-plugin</artifactId>
                         <configuration>
-                            <dependencyReducedPomLocation>${project.build.directory}/dependency-reduced-pom.xml
+                            <dependencyReducedPomLocation>
+                                ${project.build.directory}/dependency-reduced-pom.xml
                             </dependencyReducedPomLocation>
                         </configuration>
                         <executions>
