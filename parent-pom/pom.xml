@@ -118,6 +118,9 @@
             <resource>
                 <directory>src/main/resources</directory>
             </resource>
+            <resource>
+                <directory>${project.build.directory}/generated-resources</directory>
+            </resource>
         </resources>
         <testResources>
             <testResource>
@@ -371,7 +374,7 @@
                     <version>${plugins.maven.resources.version}</version>
                     <executions>
                         <execution>
-                            <id>copy-resources</id>
+                            <id>copy-json-test-resources</id>
                             <phase>validate</phase>
                             <goals>
                                 <goal>copy-resources</goal>
@@ -382,6 +385,23 @@
                                 <resources>
                                     <resource>
                                         <directory>src/raml/json</directory>
+                                        <filtering>true</filtering>
+                                    </resource>
+                                </resources>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>copy-json-schema-resources</id>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>copy-resources</goal>
+                            </goals>
+                            <configuration>
+                                <outputDirectory>${basedir}/target/generated-resources/json/schema
+                                </outputDirectory>
+                                <resources>
+                                    <resource>
+                                        <directory>src/raml/json/schema</directory>
                                         <filtering>true</filtering>
                                     </resource>
                                 </resources>
