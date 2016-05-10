@@ -69,7 +69,7 @@
         <plugins.maven.war.version>2.6</plugins.maven.war.version>
         <plugins.taglist.version>2.4</plugins.taglist.version>
         <plugins.versions.version>2.2</plugins.versions.version>
-        <plugins.maven.liquibase.version>3.4.2</plugins.maven.liquibase.version>
+        <liquibase.version>3.4.2</liquibase.version>
         <plugins.maven.shade.version>2.4.3</plugins.maven.shade.version>
 
         <plugins.coveralls.version>4.1.0</plugins.coveralls.version>
@@ -534,7 +534,7 @@
                 <plugin>
                     <groupId>org.liquibase</groupId>
                     <artifactId>liquibase-maven-plugin</artifactId>
-                    <version>${plugins.maven.liquibase.version}</version>
+                    <version>${liquibase.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -1159,10 +1159,12 @@
                 <dependency>
                     <groupId>org.liquibase</groupId>
                     <artifactId>liquibase-core</artifactId>
+                    <version>${liquibase.version}</version>
                 </dependency>
                 <dependency>
                     <groupId>org.postgresql</groupId>
                     <artifactId>postgresql</artifactId>
+                    <version>${postgresql.driver.version}</version>
                 </dependency>
             </dependencies>
         </profile>

@@ -66,7 +66,6 @@
 
         <slf4j.version>1.7.10</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
-        <postgresql.driver.version>9.4-1201-jdbc41</postgresql.driver.version>
         <selenium.version>2.46.0</selenium.version>
 
         <quartz.version>1.7.3</quartz.version>
