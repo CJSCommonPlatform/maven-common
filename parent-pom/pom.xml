@@ -637,6 +637,7 @@
                     <excludes>
                         <exclude>uk/gov/justice/api/*Application.class</exclude>
                         <exclude>uk/gov/justice/api/*JmsListener.class</exclude>
+                        <exclude>uk/gov/justice/api/Remote*.class</exclude>
                         <exclude>uk/gov/justice/api/resource/*Resource.class</exclude>
                     </excludes>
                 </configuration>
