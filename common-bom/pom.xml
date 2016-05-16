@@ -37,7 +37,10 @@
         <commons.digester.version>1.8.1</commons.digester.version>
         <commons.discovery.version>0.5</commons.discovery.version>
         <commons.io.version>2.4</commons.io.version>
-        <commons.lang.version>3.4</commons.lang.version>
+        <commons.lang.version>2.6</commons.lang.version>
+        <commons.lang3.version>3.4</commons.lang3.version>
+        <commons.logging.version>1.2</commons.logging.version>
+        <commons.validator.version>1.5.1</commons.validator.version>
 
         <guava.version>19.0</guava.version>
 
@@ -57,7 +60,7 @@
         <hamcrest.version>1.3</hamcrest.version>
         <tomcat.version>8.0.21</tomcat.version>
         <camel.version>2.16.1</camel.version>
-        <xbean.version>4.1</xbean.version>
+        <xbean.version>4.5</xbean.version>
         <junit.version>4.12</junit.version>
         <gson.version>2.3.1</gson.version>
 
@@ -92,6 +95,7 @@
         <string.template.version>4.0.8</string.template.version>
         <javapoet.version>1.6.1</javapoet.version>
         <reflections.version>0.9.10</reflections.version>
+        <findbugs.version>3.0.0</findbugs.version>
     </properties>
 
     <!-- ============ DEPENDENCIES ============ -->
@@ -279,6 +283,11 @@
                 <artifactId>xbean-spring</artifactId>
                 <version>${xbean.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.xbean</groupId>
+                <artifactId>xbean-asm5-shaded</artifactId>
+                <version>${xbean.version}</version>
+            </dependency>
 
             <!-- activemq dependencies -->
             <dependency>
@@ -445,9 +454,26 @@
 
             <!-- Apache Commons Lang - http://commons.apache.org/lang/ -->
             <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${commons.lang.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>${commons.lang.version}</version>
+                <version>${commons.lang3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+                <version>${commons.logging.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-validator</groupId>
+                <artifactId>commons-validator</artifactId>
+                <version>${commons.validator.version}</version>
             </dependency>
 
             <!-- JavaBeans Activation Framework - http://www.oracle.com/technetwork/java/jaf11-139815.html -->
@@ -723,6 +749,12 @@
                 <groupId>com.squareup</groupId>
                 <artifactId>javapoet</artifactId>
                 <version>${javapoet.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>jsr305</artifactId>
+                <version>${findbugs.version}</version>
             </dependency>
         </dependencies>
 

@@ -602,7 +602,6 @@
                         <configuration>
                             <!--Available rules - http://maven.apache.org/enforcer/enforcer-rules/-->
                             <rules>
-                                <!--<DependencyConvergence />-->
                                 <requireJavaVersion>
                                     <version>${enforcer.java.version.range}</version>
                                 </requireJavaVersion>
@@ -612,6 +611,7 @@
                                 <requirePluginVersions>
                                     <message>Please define plugin versions</message>
                                 </requirePluginVersions>
+                                <dependencyConvergence/>
                             </rules>
                         </configuration>
                     </execution>
