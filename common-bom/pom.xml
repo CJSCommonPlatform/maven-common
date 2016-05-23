@@ -28,7 +28,7 @@
 
         <activemq.version>5.11.1</activemq.version>
 
-        <jackson.version>2.7.4</jackson.version>
+        <jackson.version>2.6.4</jackson.version>
 
         <commons.beanutils.version>1.8.3</commons.beanutils.version>
         <commons.codec.version>1.6</commons.codec.version>
