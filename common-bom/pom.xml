@@ -28,8 +28,7 @@
 
         <activemq.version>5.11.1</activemq.version>
 
-        <jackson.version>2.6.4</jackson.version>
-        <jackson-datatype-jsr353.version>2.5.2</jackson-datatype-jsr353.version>
+        <jackson.version>2.7.4</jackson.version>
 
         <commons.beanutils.version>1.8.3</commons.beanutils.version>
         <commons.codec.version>1.6</commons.codec.version>
@@ -370,7 +369,13 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
                 <artifactId>jackson-datatype-jsr353</artifactId>
-                <version>${jackson-datatype-jsr353.version}</version>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jsr310</artifactId>
+                <version>${jackson.version}</version>
             </dependency>
 
             <dependency>
