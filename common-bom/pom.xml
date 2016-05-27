@@ -95,6 +95,7 @@
         <javapoet.version>1.6.1</javapoet.version>
         <reflections.version>0.9.10</reflections.version>
         <findbugs.version>3.0.0</findbugs.version>
+        <deltaspike.version>1.6.1</deltaspike.version>
     </properties>
 
     <!-- ============ DEPENDENCIES ============ -->
@@ -624,6 +625,38 @@
                 <groupId>org.apache.tomee</groupId>
                 <artifactId>openejb-server</artifactId>
                 <version>${openejb.version}</version>
+            </dependency>
+
+            <!-- Deltaspike -->
+            <dependency>
+                <groupId>org.apache.deltaspike.core</groupId>
+                <artifactId>deltaspike-core-api</artifactId>
+                <version>${deltaspike.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.deltaspike.core</groupId>
+                <artifactId>deltaspike-core-impl</artifactId>
+                <version>${deltaspike.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.deltaspike.modules</groupId>
+                <artifactId>deltaspike-data-module-api</artifactId>
+                <version>${deltaspike.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.deltaspike.modules</groupId>
+                <artifactId>deltaspike-data-module-impl</artifactId>
+                <version>${deltaspike.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.deltaspike.cdictrl</groupId>
+                <artifactId>deltaspike-cdictrl-openejb</artifactId>
+                <version>${deltaspike.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.deltaspike.modules</groupId>
+                <artifactId>deltaspike-test-control-module-api</artifactId>
+                <version>${deltaspike.version}</version>
             </dependency>
 
             <!-- Hibernate - http://www.hibernate.org/ -->
