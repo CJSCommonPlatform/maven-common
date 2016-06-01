@@ -30,7 +30,7 @@
 
         <jackson.version>2.6.4</jackson.version>
 
-        <commons.beanutils.version>1.8.3</commons.beanutils.version>
+        <commons.beanutils.version>1.9.2</commons.beanutils.version>
         <commons.codec.version>1.6</commons.codec.version>
         <commons.collections.version>3.2.1</commons.collections.version>
         <commons.digester.version>1.8.1</commons.digester.version>
@@ -136,13 +136,16 @@
                 <version>${version.org.wildfly}</version>
                 <type>zip</type>
             </dependency>
-
+            <dependency>
+                <groupId>org.wildfly</groupId>
+                <artifactId>wildfly-jms-client-bom</artifactId>
+                <version>${version.org.wildfly}</version>
+            </dependency>
             <dependency>
                 <groupId>org.jboss.arquillian.container</groupId>
                 <artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
                 <version>${version.org.jboss.arquillian}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.jboss.arquillian</groupId>
                 <artifactId>arquillian-bom</artifactId>
