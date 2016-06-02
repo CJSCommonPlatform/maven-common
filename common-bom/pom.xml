@@ -86,7 +86,7 @@
         <version.org.wildfly>10.0.0.Final</version.org.wildfly>
 
         <drools.version>6.2.0.Final</drools.version>
-        <jsonpath.version>2.0.0</jsonpath.version>
+        <jsonpath.version>2.2.0</jsonpath.version>
 
         <metrics.version>3.1.2</metrics.version>
         <raml-parser.version>0.8.12</raml-parser.version>
