@@ -6,7 +6,7 @@
 
     <groupId>uk.gov.justice</groupId>
     <artifactId>maven-common</artifactId>
-    <version>1.6.9</version>
+    <version>1.6.10-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Maven Common</name>
