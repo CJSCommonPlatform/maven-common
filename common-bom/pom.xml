@@ -90,7 +90,7 @@
         <version.org.jboss.arquillian>1.1.11.Final</version.org.jboss.arquillian>
         <version.org.wildfly>10.0.0.Final</version.org.wildfly>
 
-        <drools.version>6.2.0.Final</drools.version>
+        <drools.version>6.4.0.Final</drools.version>
         <jsonpath.version>2.2.0</jsonpath.version>
 
         <metrics.version>3.1.2</metrics.version>
