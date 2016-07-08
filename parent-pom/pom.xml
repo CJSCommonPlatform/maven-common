@@ -28,6 +28,7 @@
         <!-- Java API versions targeted -->
         <java.se.version>8</java.se.version>
         <java.ee.version>7</java.ee.version>
+        <javaee-api.version>7.0</javaee-api.version>
 
         <!-- Compilation properties -->
         <compiler.source>1.8</compiler.source>
